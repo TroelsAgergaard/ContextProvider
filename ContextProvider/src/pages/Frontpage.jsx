@@ -1,7 +1,8 @@
-import { useOutletContext } from "react-router-dom";
+import { useContext } from "react";
+import myContext from "../context/myContext";
 const Frontpage = () => {
-  const context = useOutletContext();
-  return ( <>Frontpage! {context}</> );
+  const [context, setContext] = useContext(myContext)
+  return ( <>Frontpage! {context ? "true" : "false"}</> );
 }
  
 export default Frontpage;

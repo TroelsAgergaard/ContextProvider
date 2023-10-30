@@ -5,13 +5,14 @@ import { Outlet } from 'react-router-dom'
 import './App.css'
 
 function App() {
-  const [context, setContext] = useState("Context Value...");
+  const [context, setContext] = useState(false);
 
   return (
     <myContext.Provider value={[context, setContext]}>
-      <header>Context value: <Value /></header>
-      <Outlet context={context}/>
-      <footer>Dette er en footer som skal vise vores context: <Value /></footer>
+      <header>Header context: <Value /></header>
+      {/* <Outlet context={[context, setContext]}/> */}
+      <Outlet />
+      <footer>Footer context: {context ? "true" : "false"}</footer>
     </myContext.Provider>
   )
 }
